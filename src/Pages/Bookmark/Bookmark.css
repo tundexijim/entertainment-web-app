@@ -1,0 +1,8 @@
+.bookmarked-container .bookmarked-movie, .bookmarked-series, .bookmarked{
+    display: flex;
+    flex-wrap: wrap;
+}
+.bookmarked-container h1{
+    font-size: 32;
+    font-weight: 300;
+}

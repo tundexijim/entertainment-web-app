@@ -1,0 +1,8 @@
+.series-container .series{
+    display: flex;
+    flex-wrap: wrap;
+}
+.series-container h1{
+    font-size: 32;
+    font-weight: 300;
+}

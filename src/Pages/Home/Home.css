@@ -1,0 +1,23 @@
+.home__container{
+min-width: 80%;
+}
+.home__container .trending{
+    display: flex; 
+    gap: 40px;
+}
+.home__container h1{
+    font-size: 32;
+    font-weight: 300;
+}
+.home__container .myslider{
+    display: flex;
+    flex-direction: column;
+}
+.slider-container{
+    margin-bottom: 40px;
+}
+.recommended-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+

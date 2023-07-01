@@ -1,0 +1,8 @@
+.movie-container .movies{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie-container h1{
+    font-size: 32;
+    font-weight: 300;
+}
