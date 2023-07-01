@@ -39,7 +39,7 @@ useEffect(() => {
         <img src={avatar} alt='avatar' className='avatar' /> 
         </div>
    <Routes>
-    <Route path='/entertainment-web-app' element={<Home data = {mydata} mainheading = 'Recommended for you'/>}/>
+    <Route path='/entertainment-web-app/' element={<Home data = {mydata} mainheading = 'Recommended for you'/>}/>
     <Route path='/entertainment-web-app/movies' element={<Movies data = {mydata} mainheading = 'Movies'/>}/>
     <Route path='/entertainment-web-app/series' element={<Series data = {mydata} mainheading = 'TV Series'/>}/>
     <Route path='/entertainment-web-app/bookmark' element={<Bookmark data = {mydata} mainheading = 'Bookmarked Movies'/>}/>
