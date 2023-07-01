@@ -3,8 +3,8 @@
     "title": "Beyond Earth",
     "thumbnail": {
       "trending": {
-        "small": "assets/thumbnails/beyond-earth/trending/small.jpg",
-        "large": "assets/thumbnails/beyond-earth/trending/large.jpg"
+        "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
+        "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
       
       },
       "regular": {
@@ -445,7 +445,7 @@
     "thumbnail": {
       "regular": {
         "small": "./assets/thumbnails/mission-saturn/regular/small.jpg",
-        "medium": "../assets/thumbnails/mission-saturn/regular/medium.jpg",
+        "medium": "./assets/thumbnails/mission-saturn/regular/medium.jpg",
         "large": "./assets/thumbnails/mission-saturn/regular/large.jpg"
       }
     },

@@ -1,5 +1,5 @@
 const { ApolloServer, gql }= require('apollo-server');
-const {movieData} = require('./src/data.json')
+const {movieData} = require('./data.json')
 const typeDefs = gql`
   type Query {
     movies: [movie]!
