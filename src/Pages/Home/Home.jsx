@@ -6,7 +6,7 @@ import SearchInput from '../../components/SearchInput'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-function Home({data, mainheading, iBookmark}) {   
+function Home({data, mainheading}) {   
   const TrendingData = data.filter((item) => item.isTrending);
   const OtherData = data.filter((item) => !item.isTrending);
   let heading = mainheading;
@@ -68,7 +68,7 @@ function Home({data, mainheading, iBookmark}) {
     <div>
     <div className="slider-container">
     <Slider {...settings}>  
-      {TrendingData && TrendingData.map((item, index) => (<Trend item ={item} key={index} index={index} myBookmark={iBookmark}/>))}
+      {TrendingData && TrendingData.map((item, index) => (<Trend item ={item} key={index} index={index}/>))}
     </Slider>
     </div>
     <h1>{heading}</h1>

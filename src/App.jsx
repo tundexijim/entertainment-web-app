@@ -1,26 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import avatar from './image-avatar.png'
 import Home from './Pages/Home/Home'
 import Bookmark from './Pages/Bookmark/Bookmark'
 import Movies from './Pages/Movies/Movies'
 import Series from './Pages/Series/Series'
 import { Routes, Route, NavLink } from "react-router-dom";
-import data from './data.json'
+import axios from 'axios';
 function App() {
-const [mydata, setmydata] = useState(data)
-async function reverseIsBookmarked() {
-  const response = await fetch('data.json');
-  const jsonData = await response.json();
-  jsonData.isBookmarked = !jsonData.isBookmarked;
-  await fetch('data.json', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(jsonData)
-  });
-  setmydata(jsonData);
-}
+const [mydata, setmydata] = useState([])
+// async function reverseIsBookmarked() {
+//   const response = await fetch('data.json');
+//   const jsonData = await response.json();
+//   jsonData.isBookmarked = !jsonData.isBookmarked;
+//   await fetch('data.json', {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(jsonData)
+//   });
+//   setmydata(jsonData);
+// }
+useEffect(() => {
+  axios.get("/data.json")
+    .then((res) => {setmydata(res.data)})
+    .catch((err) => console.log(err));
+}, []);
   return (
     <div className='container'>
        <div className='navcontainer'>
@@ -34,7 +39,7 @@ async function reverseIsBookmarked() {
         <img src={avatar} alt='avatar' className='avatar' /> 
         </div>
    <Routes>
-    <Route path='/entertainment-web-app' element={<Home data = {mydata} mainheading = 'Recommended for you' iBookmark = {reverseIsBookmarked}/>}/>
+    <Route path='/entertainment-web-app' element={<Home data = {mydata} mainheading = 'Recommended for you'/>}/>
     <Route path='/movies' element={<Movies data = {mydata} mainheading = 'Movies'/>}/>
     <Route path='/series' element={<Series data = {mydata} mainheading = 'TV Series'/>}/>
     <Route path='/bookmark' element={<Bookmark data = {mydata} mainheading = 'Bookmarked Movies'/>}/>
