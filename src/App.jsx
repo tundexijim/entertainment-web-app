@@ -22,7 +22,7 @@ const [mydata, setmydata] = useState([])
 //   setmydata(jsonData);
 // }
 useEffect(() => {
-  axios.get("/data.json")
+  axios.get("./data.json")
     .then((res) => {setmydata(res.data)})
     .catch((err) => console.log(err));
 }, []);
